@@ -29,6 +29,8 @@ import { SnackError } from './components/snack-error'
 
 import { setupApptentiveWithCredentials } from './feedback/log-to-apptentive'
 
+import { processCredentials } from './process-cred'
+
 if (Platform.Version < 29) {
   // enable react-native-screens
   // TODO:KS Investigate why enableScreens break modals on Android
@@ -143,4 +145,8 @@ export class MSDKMeApp extends Component<AppProps, void> {
 
 export function createApp(appName: string) {
   return AppRegistry.registerComponent(appName, () => MSDKMeApp)
+}
+
+expect function processCustomerCredentials(url) {
+  return processCredentials(url);
 }
