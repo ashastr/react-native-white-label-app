@@ -236,8 +236,6 @@ export default class QRScanner extends PureComponent<
         ? (qrData: GenericObject).data
         : JSON.stringify(qrData)
     )
-    console.log('********* qrData scanned', qrData);
-    console.log('********* ephemeralProofRequest scanned', ephemeralProofRequest);
     if (
       ephemeralProofRequest &&
       ephemeralProofRequest.type === QR_CODE_TYPES.EPHEMERAL_PROOF_REQUEST_V1
