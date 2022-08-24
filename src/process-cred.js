@@ -7,18 +7,18 @@ import { flatJsonParse } from "./common/flat-json-parse";
 
 export const processCredentials = async (url) => {
     let qrData = null;
-    const urlQrCode = isValidUrl(event.data);
+    const urlQrCode = isValidUrl(url);
     if (urlQrCode) {
-        const [urlError, urlData] = await getUrlData(urlQrCode, event.data)
+        const [urlError, urlData] = await getUrlData(urlQrCode, url)
         if (urlError) {
          console.log('****** isValidUrl error', urlError);
         }
         qrData = urlData
       }
   
-      const openidLinkQrCode = isValidOpenIDLink(event.data)
+      const openidLinkQrCode = isValidOpenIDLink(url)
       if (openidLinkQrCode) {
-        const [urlError, urlData] = await getOpenidLinkData(event.data)
+        const [urlError, urlData] = await getOpenidLinkData(url)
         if (urlError) {
           console.log('****** isValidOpenIDLink error', urlError);
         }
@@ -26,7 +26,7 @@ export const processCredentials = async (url) => {
       }
   
       if (!qrData) {
-        const [parseError, parsedData] = flatJsonParse(event.data)
+        const [parseError, parsedData] = flatJsonParse(url)
         if (parseError) {
           console.log('****** flatJsonParse error', urlError);
         }
