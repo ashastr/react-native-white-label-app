@@ -193,7 +193,6 @@ export class QRCodeScannerScreen extends Component<
     const invitation = await convertAriesOutOfBandInvitationToAppInvitation(
       invite
     )
-    console.log('******* invitation', invitation);
     this.props.handleInvitation(invitation)
   }
 
