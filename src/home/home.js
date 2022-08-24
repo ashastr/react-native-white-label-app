@@ -32,6 +32,7 @@ import {
   OPENING_THE_SIDE_MENU,
 } from '../feedback/log-to-apptentive'
 import { handleInvitation } from '../invitation/invitation-store'
+import { proofRequestReceived } from '../proof-request/proof-request-store'
 
 export const headlineForHomeRoute = homeHeadline || 'Home'
 const showHistoryEvents =
@@ -194,6 +195,7 @@ const mapDispatchToProps = (dispatch) =>
     {
       getUnacknowledgedMessages,
       handleInvitation,
+      proofRequestReceived,
     },
     dispatch
   )
