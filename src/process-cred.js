@@ -4,6 +4,7 @@ import { handleInvitation } from "./invitation/invitation-store";
 import { isValidUrl } from "./components/qr-scanner/qr-code-types/qr-url";
 import { isValidOpenIDLink } from "./components/qr-scanner/qr-code-types/qr-code-oidc";
 import { flatJsonParse } from "./common/flat-json-parse";
+import { getUrlData } from "./components/qr-scanner/qr-code-types/qr-url";
 
 export const processCredentials = async (url) => {
     let qrData = null;
