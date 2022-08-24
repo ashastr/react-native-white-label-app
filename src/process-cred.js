@@ -2,7 +2,7 @@ import { isAriesOutOfBandInvitation } from "./invitation/kinds/aries-out-of-band
 import { convertAriesOutOfBandInvitationToAppInvitation } from "./invitation/kinds/aries-out-of-band-invitation";
 import { handleInvitation } from "./invitation/invitation-store";
 
-export const processCredentials = (url) => {
+export const processCredentials = async (url) => {
     const outOfBandInvite = isAriesOutOfBandInvitation(url);
     console.log('********* outOfBandInvite', outOfBandInvite);
     if (outOfBandInvite) {
