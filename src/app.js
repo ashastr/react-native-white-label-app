@@ -153,6 +153,6 @@ export function processCustomerCredentials(url, handleInvitation) {
   return processCredentials(url, handleInvitation);
 }
 
-export function processCustomerVerification(url, proofRequestReceived) {
-  return proofRequestReceived(url, proofRequestReceived);
+export function processCustomerVerification(url, proofRequestReceived, navigation) {
+  return proofRequestReceived(url, proofRequestReceived, navigation);
 }

@@ -7,8 +7,9 @@ import { getUrlData } from "./components/qr-scanner/qr-code-types/qr-url";
 import { validateEphemeralProofQrCode } from "./proof-request/proof-request-qr-code-reader";
 import { QR_CODE_TYPES } from "./components/qr-scanner/type-qr-scanner";
 import { GenericObject } from "./common/type-common";
+import { proofRequestRoute } from "./common";
 
-export const processVerification = async (url, proofRequestReceived) => {
+export const processVerification = async (url, proofRequestReceived, navigation) => {
     let qrData = null;
     const urlQrCode = isValidUrl(url);
     if (urlQrCode) {
@@ -57,6 +58,10 @@ export const processVerification = async (url, proofRequestReceived) => {
           senderLogoUrl: null,
           hidden: true,
         });
-        
+        navigation.navigate(proofRequestRoute, {
+          uid,
+          backRedirectRoute: this.props.route.params?.backRedirectRoute,
+        })
+
       }
 }
