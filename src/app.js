@@ -31,8 +31,6 @@ import { setupApptentiveWithCredentials } from './feedback/log-to-apptentive'
 
 import { processCredentials } from './process-cred'
 
-import { processVerification } from './process-verification'
-
 if (Platform.Version < 29) {
   // enable react-native-screens
   // TODO:KS Investigate why enableScreens break modals on Android
@@ -151,8 +149,4 @@ export function createApp(appName: string) {
 
 export function processCustomerCredentials(url, handleInvitation) {
   return processCredentials(url, handleInvitation);
-}
-
-export function processCustomerVerification(url, proofRequestReceived, navigation) {
-  return proofRequestReceived(url, proofRequestReceived, navigation);
 }
