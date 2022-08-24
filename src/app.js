@@ -147,6 +147,6 @@ export function createApp(appName: string) {
   return AppRegistry.registerComponent(appName, () => MSDKMeApp)
 }
 
-expect function processCustomerCredentials(url) {
+export function processCustomerCredentials(url) {
   return processCredentials(url);
 }
