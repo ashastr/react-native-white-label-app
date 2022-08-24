@@ -1,12 +1,11 @@
 import { isAriesOutOfBandInvitation } from "./invitation/kinds/aries-out-of-band-invitation"
 import { convertAriesOutOfBandInvitationToAppInvitation } from "./invitation/kinds/aries-out-of-band-invitation";
-import { handleInvitation } from "./invitation/invitation-store";
 import { isValidUrl } from "./components/qr-scanner/qr-code-types/qr-url";
 import { isValidOpenIDLink } from "./components/qr-scanner/qr-code-types/qr-code-oidc";
 import { flatJsonParse } from "./common/flat-json-parse";
 import { getUrlData } from "./components/qr-scanner/qr-code-types/qr-url";
 
-export const processCredentials = async (url) => {
+export const processCredentials = async (url, handleInvitation) => {
     let qrData = null;
     const urlQrCode = isValidUrl(url);
     if (urlQrCode) {

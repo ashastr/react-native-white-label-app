@@ -31,6 +31,7 @@ import {
   CLOSING_THE_SIDE_MENU,
   OPENING_THE_SIDE_MENU,
 } from '../feedback/log-to-apptentive'
+import { handleInvitation } from '../invitation/invitation-store'
 
 export const headlineForHomeRoute = homeHeadline || 'Home'
 const showHistoryEvents =
@@ -192,6 +193,7 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       getUnacknowledgedMessages,
+      handleInvitation,
     },
     dispatch
   )
