@@ -408,14 +408,14 @@ function* handleInvitationSaga(
     return
   }
   const invitation = action.invitation
-  if (!invitation) {
-    yield put(
-      navigateToRoutePN(homeRoute, {
-        screen: homeDrawerRoute,
-        params: undefined,
-      })
-    )
-  }
+  // if (!invitation) {
+  //   yield put(
+  //     navigateToRoutePN(homeRoute, {
+  //       screen: homeDrawerRoute,
+  //       params: undefined,
+  //     })
+  //   )
+  // }
 
   // aries connection
   if (invitation.type === CONNECTION_INVITE_TYPES.ARIES_V1_QR) {
