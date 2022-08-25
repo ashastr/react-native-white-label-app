@@ -18,6 +18,8 @@ import {
   MyCredentialsViewEmptyState,
 } from '../external-imports'
 import { deleteClaim } from '../claim-offer/claim-offer-store'
+import { handleInvitation } from '../invitation/invitation-store'
+import { proofRequestReceived } from '../proof-request/proof-request-store'
 
 export const headlineForCredentialRoute =
   credentialsHeadline || 'MY Credentials'
@@ -90,9 +92,18 @@ const MyCredentialsScreen = ({ route, navigation }: MyCredentialsProps) => {
 
 export const MyCredentials = CustomMyCredentialsScreen || MyCredentialsScreen
 
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      handleInvitation,
+      proofRequestReceived,
+    },
+    dispatch
+  )
+
 export const myCredentialsScreen = {
-  routeName: myCredentialsRoute,
-  screen: MyCredentials,
+  routeName: myCredentialsRoute, 
+  screen: connect(mapStateToProps, mapDispatchToProps)(MyCredentials),
 }
 
 const styles = StyleSheet.create({
