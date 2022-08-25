@@ -73,6 +73,9 @@ const MyCredentialsScreen = (props: MyCredentialsProps) => {
             <EmptyState />
           ))}
         {!hasNoCredentials && (
+          <CustomMyCredentialsScreen {...props} />
+        )}
+        {!hasNoCredentials && (
           <CredentialsCards
             credentials={credentials}
             deleteClaim={deleteCredential}
@@ -91,7 +94,7 @@ const MyCredentialsScreen = (props: MyCredentialsProps) => {
   )
 }
 
-export const MyCredentials = CustomMyCredentialsScreen || MyCredentialsScreen
+export const MyCredentials = MyCredentialsScreen
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
@@ -104,7 +107,7 @@ const mapDispatchToProps = (dispatch) =>
 
 export const myCredentialsScreen = {
   routeName: myCredentialsRoute, 
-  screen: connect(mapStateToProps, mapDispatchToProps)(MyCredentials),
+  screen: connect(null, mapDispatchToProps)(MyCredentials),
 }
 
 const styles = StyleSheet.create({
