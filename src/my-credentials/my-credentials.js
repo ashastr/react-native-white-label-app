@@ -28,7 +28,8 @@ const showCameraButton =
     ? credentialsShowCameraButton
     : true
 
-const MyCredentialsScreen = ({ route, navigation }: MyCredentialsProps) => {
+const MyCredentialsScreen = (props: MyCredentialsProps) => {
+  const { route, navigation } = props;
   const receivedCredentials = useSelector(getReceivedCredentials)
   const dispatch = useDispatch()
   const deleteCredential = useCallback(
