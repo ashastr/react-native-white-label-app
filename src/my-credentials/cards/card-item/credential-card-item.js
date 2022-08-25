@@ -217,7 +217,7 @@ const CredentialCard = ({
               style={[
                 styles.card,
                 {
-                  backgroundColor: colorTheme,
+                  backgroundColor: '#EB9B2D',
                 },
               ]}
             >
