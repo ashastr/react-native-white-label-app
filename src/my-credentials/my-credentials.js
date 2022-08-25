@@ -73,15 +73,15 @@ const MyCredentialsScreen = (props: MyCredentialsProps) => {
             <EmptyState />
           ))}
         {!hasNoCredentials && (
-          <CustomMyCredentialsScreen {...props} />
+          <CredentialsCards
+          credentials={credentials}
+          deleteClaim={deleteCredential}
+          navigation={navigation}
+          route={route}
+          />
         )}
         {!hasNoCredentials && (
-          <CredentialsCards
-            credentials={credentials}
-            deleteClaim={deleteCredential}
-            navigation={navigation}
-            route={route}
-          />
+          <CustomMyCredentialsScreen {...props} />
         )}
       </View>
 
