@@ -65,7 +65,7 @@ const MyCredentialsScreen = ({ route, navigation }: MyCredentialsProps) => {
       <View style={styles.container}>
         {hasNoCredentials &&
           (MyCredentialsViewEmptyState ? (
-            <MyCredentialsViewEmptyState />
+            <MyCredentialsViewEmptyState {...props}/>
           ) : (
             <EmptyState />
           ))}
