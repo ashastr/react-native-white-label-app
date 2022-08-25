@@ -4,7 +4,7 @@ export const SETTINGS = 'Settings'
 export const PHYSICAL_DOCUMENT_VERIFICATION = 'PhysicalDocumentVerification'
 
 export const CONNECTIONS_LABEL = 'My Connections'
-export const CREDENTIALS_LABEL = 'My Credentials'
+export const CREDENTIALS_LABEL = 'Discover Identity'
 export const SETTINGS_LABEL = 'Settings'
 export const PHYSICAL_DOCUMENT_VERIFICATION_LABEL = 'Document Verification'
 
